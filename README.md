@@ -1,1 +1,1 @@
-# Introduction to Kuberents
+# Introduction to Kubernetes
