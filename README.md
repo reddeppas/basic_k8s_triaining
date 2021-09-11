@@ -9,6 +9,7 @@
 
 ### Application Deployment
     
-    ![image](https://user-images.githubusercontent.com/20655128/132951100-56f2bc20-5d6e-4cb6-ac26-a0d7b71d37a1.png)
+    ![alt text](https://user-images.githubusercontent.com/20655128/132951100-56f2bc20-5d6e-4cb6-ac26-a0d7b71d37a1.png)
+
 
      
