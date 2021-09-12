@@ -157,8 +157,8 @@ In a real world cloud environment, this component lets you wire-up your cluster 
     
 ### Declartive approach vs Impertive approach
     
-    In Impertive approach you had to execute every command one after the another manually. Taking an imperative approach defies the entire point of Kubernetes.
+ In Impertive approach you had to execute every command one after the another manually. Taking an imperative approach defies the entire point of Kubernetes.
     
-    In declarative approach you let know the kubernetes desire state for your servers to be in and Kubernetes figures out a way to implement that.
+ In declarative approach you let know the kubernetes desire state for your servers to be in and Kubernetes figures out a way to implement that.
     
     
