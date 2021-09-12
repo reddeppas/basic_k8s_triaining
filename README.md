@@ -134,26 +134,26 @@ In a real world cloud environment, this component lets you wire-up your cluster 
  
  Pods are like a box that encapsulates a container. To make sure the pod has been created and is running, execute the following command:
  
-    $kubectl get pod
+     $kubectl get pod
  
  Pods by default are inaccessible from outside the cluster. To make them accessible, you have to expose them using a service. So, once the pod is up and running, execute the following command to expose the pod:
 
-    $kubectl expose pod hello-kube --type=LoadBalancer --port=80
+      $kubectl expose pod hello-kube --type=LoadBalancer --port=80
     
  To make sure the load balancer service has been created successfully, execute the following command:
     
-    $kubectl get service
+     $kubectl get service
     
   Deleting resources in Kubernetes
   
-   $kubectl delete <resourec type> <resource name>
+     $kubectl delete <resourec type> <resource name>
 
   To delete a pod named hello-kube the command will be as follows:
 
-   $kubectl delete pod hello-kube
+      $kubectl delete pod hello-kube
   
   To delete service
-    $kubectl delete service hello-kube
+      $kubectl delete service hello-kube
     
 ### Declartive approach vs Impertive approach
     
