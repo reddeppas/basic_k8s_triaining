@@ -124,8 +124,10 @@ Roles :
      
 ### node components
     kubelet: This service acts as the gateway between the control plain and each of the nodes in a cluster. Every instructions from the control plain towards the nodes, passes                  through this service. It also interacts with the etcd store to keep the state information updated.
-    kubeproxy: 
-    container runtime
+    
+    kubeproxy: This small service runs on each node server and maintains network rules on them. Any network request that reaches a service inside your cluster, passes through this                 service.
+    
+    container runtime: Kubernetes is a container orchestration tool hence it runs applications in containers. This means that every node needs to have a container runtime like                             Docker or rkt or cri-o.
 
 
 
