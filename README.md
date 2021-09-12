@@ -83,12 +83,13 @@
     
  ### Helloworld in kubernetes
  Once the kind cluster up and running 
- $kubectl run hello-kube --image=node-web-app --port=80
+    $kubectl run hello-kube --image=node-web-app --port=80
  
  The run command runs the given container image inside a pod.
  
  Pods are like a box that encapsulates a container. To make sure the pod has been created and is running, execute the following command:
  
- $kubectl get pod
+    $kubectl get pod
  
  Pods by default are inaccessible from outside the cluster. To make them accessible, you have to expose them using a service. So, once the pod is up and running, execute the following command to expose the pod:
+    $kubectl expose pod hello-kube --type=LoadBalancer --port=80
