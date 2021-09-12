@@ -113,21 +113,29 @@ Roles :
   
 ### control plane components
 
-##### kube-apiserver: This acts as the entrance to the Kubernetes control plane, responsible for validating and processing requests delivered using client libraries like the                             kubectl program.
-##### etcd: distributed key-value data store which acts as the single source of truth about your cluster.It holds configuration data and information about the state of the cluster
+##### kube-apiserver: 
+This acts as the entrance to the Kubernetes control plane, responsible for validating and processing requests delivered using client libraries like the                             kubectl program.
+##### etcd: 
+distributed key-value data store which acts as the single source of truth about your cluster.It holds configuration data and information about the state of the cluster
    
-##### kube-scheduler: Assigning task to a certain node considering its available resources and the requirements of the task is known as scheduling. The kube-scheduler component                         does the task of scheduling in Kubernetes making sure none of the servers in the cluster is overloaded.
+##### kube-scheduler: 
+Assigning task to a certain node considering its available resources and the requirements of the task is known as scheduling. The kube-scheduler component                         does the task of scheduling in Kubernetes making sure none of the servers in the cluster is overloaded.
   
-##### kube-controller manager: The controllers in Kubernetes are responsible for controlling the state of the cluster. When you let Kubernetes know what you want in your cluster,                                the controllers make sure that your request is fulfilled
+##### kube-controller manager: 
+The controllers in Kubernetes are responsible for controlling the state of the cluster. When you let Kubernetes know what you want in your cluster,                                the controllers make sure that your request is fulfilled
     
-##### cloud-controller manager: In a real world cloud environment, this component lets you wire-up your cluster with your cloud provider's (GKE/EKS) API. This way, the components                                 that interact with that cloud platform stays isolated from components that just interact with your cluster. 
+##### cloud-controller manager: 
+In a real world cloud environment, this component lets you wire-up your cluster with your cloud provider's (GKE/EKS) API. This way, the components                                 that interact with that cloud platform stays isolated from components that just interact with your cluster. 
      
 ### node components
-  ##### kubelet: This service acts as the gateway between the control plain and each of the nodes in a cluster. Every instructions from the control plain towards the nodes, passes                  through this service. It also interacts with the etcd store to keep the state information updated.
+  ##### kubelet: 
+  This service acts as the gateway between the control plain and each of the nodes in a cluster. Every instructions from the control plain towards the nodes, passes                  through this service. It also interacts with the etcd store to keep the state information updated.
     
-  ##### kubeproxy: This small service runs on each node server and maintains network rules on them. Any network request that reaches a service inside your cluster, passes through                    this service.
+  ##### kubeproxy: 
+  This small service runs on each node server and maintains network rules on them. Any network request that reaches a service inside your cluster, passes through                    this service.
     
-  ##### container runtime: Kubernetes is a container orchestration tool hence it runs applications in containers. This means that every node needs to have a container runtime like                             Docker or rkt or cri-o.
+  ##### container runtime: 
+  Kubernetes is a container orchestration tool hence it runs applications in containers. This means that every node needs to have a container runtime like                             Docker or rkt or cri-o.
 
 
 
