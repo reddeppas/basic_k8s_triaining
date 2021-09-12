@@ -69,15 +69,15 @@
      
 ### Create kubernetes cluster:
     
-    We will use kind to create kubernetes cluster. To install kind follow the document https://kind.sigs.k8s.io/docs/user/quick-start/#installation
+ We will use kind to create kubernetes cluster. To install kind follow the document https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
-    Create a cluster
+ Create a cluster
     $kind create cluster --name k8s_demo
 
-    List clusters 
+  List clusters 
     $kind get clusters
 
-    Deleting a cluster
+  Deleting a cluster
 
     $kind delete cluster --name k8s_demo
     
@@ -92,4 +92,42 @@
     $kubectl get pod
  
  Pods by default are inaccessible from outside the cluster. To make them accessible, you have to expose them using a service. So, once the pod is up and running, execute the following command to expose the pod:
+
     $kubectl expose pod hello-kube --type=LoadBalancer --port=80
+    
+ To make sure the load balancer service has been created successfully, execute the following command:
+    
+    $kubectl get service
+    
+    
+### Kubernetes Architecture
+
+A Kubernetes cluster consists of a set of worker machines, called nodes, that run containerized applications. 
+Every cluster has at least one worker node.
+
+![image](https://user-images.githubusercontent.com/20655128/132990006-007c8f4c-e8a2-4c80-9d12-ba88f8f1791a.png)
+
+Roles :
+  Control plane : Makes most of the necessary decisions and acts as sort of the brains of the entire cluster. This can be a single server or a group of server in larger projects
+  node: Responsible for running workloads. These servers are usually micro managed by the control plane and carries out various tasks following supplied instructions.
+  
+### control plane components
+
+    kube-apiserver: This acts as the entrance to the Kubernetes control plane, responsible for validating and processing requests delivered using client libraries like the kubectl                     program.
+    etcd: distributed key-value data store which acts as the single source of truth about your cluster.It holds configuration data and information about the state of the cluster
+   
+   kube-scheduler: Assigning task to a certain node considering its available resources and the requirements of the task is known as scheduling. The kube-scheduler component does                     the task of scheduling in Kubernetes making sure none of the servers in the cluster is overloaded.
+    
+    kube-controller manager: The controllers in Kubernetes are responsible for controlling the state of the cluster. When you let Kubernetes know what you want in your cluster,                                the controllers make sure that your request is fulfilled
+    
+    cloud-controller manager: In a real world cloud environment, this component lets you wire-up your cluster with your cloud provider's (GKE/EKS) API. This way, the components                                 that interact with that cloud platform stays isolated from components that just interact with your cluster. 
+     
+### node components
+    kubelet: This service acts as the gateway between the control plain and each of the nodes in a cluster. Every instructions from the control plain towards the nodes, passes                  through this service. It also interacts with the etcd store to keep the state information updated.
+    kubeproxy: 
+    container runtime
+
+
+
+  
+ 
