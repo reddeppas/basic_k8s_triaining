@@ -139,14 +139,18 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
  We will use kind to create kubernetes cluster. To install kind follow the document https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
  Create a cluster
-    kind create cluster --name k8s_demo
+      kind create cluster --name k8s_demo
 
   List clusters 
-    kind get clusters
-
+       kind get clusters
+  
+  Set Kube context 
+  
+     kubectl config use-context <cluster-name>
+     
   Deleting a cluster
 
-    kind delete cluster --name k8s_demo
+      kind delete cluster --name k8s_demo
     
     
 
