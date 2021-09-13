@@ -39,15 +39,15 @@ Open http://localhost:8080, and you'll see your hello world response
 
 Now , let us build the docker image:
     
-     $docker build -t node-web-app .
+     $docker build -t reddeppas/node-web-app:latest .
 We can run the Docker container by:
 
-     $ docker run --name hw_container -p 8080:8080 node-web-app
+     $ docker run --name helloworld_container -p 8080:8080 node-web-app
     
       
 Let us remove the container
 
-    $ docker rm -f hw_container
+    $ docker rm -f helloworld_container
 
     
 ### What is Kubernetes? 
@@ -148,7 +148,7 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
  Once the kind cluster up and running 
     
     
-        $kubectl run hello-world --image=node-web-app --port=80
+        $kubectl run hello-world --image=reddeppas/node-web-app:latest --port=80
  
  The run command runs the given container image inside a pod.
  
