@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: hello-world
-      image: node-web-app
+      image: reddeppas/node-web-app
       ports:
         - containerPort: 80
