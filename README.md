@@ -40,17 +40,19 @@ Open http://localhost:8080, and you'll see your hello world response
 Now , let us build the docker image:
     
      $docker build -t reddeppas/node-web-app:latest .
+     
 We can run the Docker container by:
 
      $ docker run --name helloworld_container -p 8080:8080 node-web-app
     
-      
 Let us remove the container
 
     $ docker rm -f helloworld_container
+    
 
     
 ### What is Kubernetes? 
+
 
 Kubernetes also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
 
@@ -70,7 +72,6 @@ Containers are similiar to vms, but they are isolated and share the same operati
 
       
      
-
     
 ### Kubernetes Architecture
 
