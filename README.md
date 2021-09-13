@@ -15,39 +15,39 @@ Docker,containerd, rkt, cri-o, lxc and runc
 ##### Install Docker: 
 https://docs.docker.com/get-docker/ 
     
-    $ docker --version
+     docker --version
     
     
 ##### Install npm
 https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
     
-    $ node -v
+     node -v
       
-    $ npm -v
+     npm -v
       
       
 ##### Install express js
 
-    $ npm install express --save
+     npm install express --save
 
 ##### Start node server
  
-    $ node helloworld/server.js 
+     node helloworld/server.js 
     
 
 Open http://localhost:8080, and you'll see your hello world response
 
 Now , let us build the docker image:
     
-     $docker build -t reddeppas/node-web-app:latest .
+     docker build -t reddeppas/node-web-app:latest .
      
 We can run the Docker container by:
 
-     $ docker run --name helloworld_container -p 8080:8080 node-web-app
+      docker run --name helloworld_container -p 8080:8080 node-web-app
     
 Let us remove the container
 
-    $ docker rm -f helloworld_container
+     docker rm -f helloworld_container
     
 
     
@@ -133,14 +133,14 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
  We will use kind to create kubernetes cluster. To install kind follow the document https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
  Create a cluster
-    $kind create cluster --name k8s_demo
+    kind create cluster --name k8s_demo
 
   List clusters 
-    $kind get clusters
+    kind get clusters
 
   Deleting a cluster
 
-    $kind delete cluster --name k8s_demo
+    kind delete cluster --name k8s_demo
     
     
 
@@ -149,32 +149,32 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
  Once the kind cluster up and running 
     
     
-        $kubectl run hello-world --image=reddeppas/node-web-app:latest --port=80
+        kubectl run hello-world --image=reddeppas/node-web-app:latest --port=80
  
  The run command runs the given container image inside a pod.
  
  Pods are like a box that encapsulates a container. To make sure the pod has been created and is running, execute the following command:
  
-     $kubectl get pod
+     kubectl get pod
  
  Pods by default are inaccessible from outside the cluster. To make them accessible, you have to expose them using a service. So, once the pod is up and running, execute the following command to expose the pod:
 
-      $kubectl expose pod hello-world --type=LoadBalancer --port=80
+      kubectl expose pod hello-world --type=LoadBalancer --port=80
     
  To make sure the load balancer service has been created successfully, execute the following command:
     
-     $kubectl get service
+     kubectl get service
     
   Deleting resources in Kubernetes
   
-     $kubectl delete <resourec type> <resource name>
+     kubectl delete <resourec type> <resource name>
 
   To delete a pod named hello-world the command will be as follows:
 
-      $kubectl delete pod hello-world
+      kubectl delete pod hello-world
   
   To delete service
-      $kubectl delete service hello-world
+      kubectl delete service hello-world
     
 ### Declartive approach vs Impertive approach
     
@@ -199,12 +199,12 @@ Data that helps uniquely identify the object. Under this field you can have info
 contains the state you desire for the object. The spec.containers sub-field contains information about the containers that will run inside this Pod. The spec.containers.name value is what the container runtime inside the node will assign to the newly created container. The spec.containers.image is the container image to be used for creating this container. And the spec.containers.ports field holds configuration regarding various ports configuration. containerPort: 80 indicates that you want to expose port 80 from the container.
 
     
-    $kubectl apply -f <configuration file>
+    kubectl apply -f <configuration file>
     
-    $kubectl apply -f k8s/pod.yaml
+    kubectl apply -f k8s/pod.yaml
     
     
-    $kubectl get pod
+    kubectl get pod
  
     
 
