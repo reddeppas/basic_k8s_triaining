@@ -188,6 +188,37 @@ contains the state you desire for the object. The spec.containers sub-field cont
     $kubectl get pod
  
     
+
+##### Config Maps
+
+A ConfigMap is  used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+
+Use a ConfigMap for setting configuration data separately from application code. The data stored in a ConfigMap cannot exceed 1 MiB
+
+
+##### Secrets:
+
+A Secret contains a small amount of sensitive data such as a password, a token, or a key.
+
+###### Types of secrets
+
+Opaque:	arbitrary user-defined data
+ 
+kubernetes.io/service-account-token:	service account token
+
+kubernetes.io/dockercfg:	serialized ~/.dockercfg file
+
+kubernetes.io/dockerconfigjson	serialized ~/.docker/config.json file
+
+kubernetes.io/basic-auth:	credentials for basic authentication
+
+kubernetes.io/ssh-auth:	credentials for SSH authentication
+
+kubernetes.io/tls:	data for a TLS client or server
+
+bootstrap.kubernetes.io/token:	bootstrap token data
+
+
 ##### ReplicationController: 
 as the name suggests allows you to easily create multiple replicas very easily. Once the desired number of replicas are created, the controller will make sure that the state stays that way.
 
@@ -201,9 +232,12 @@ A Deployment is like an extension to the already nice ReplicaSet API. Deployment
      Allows the creation of multiple pods easily	   |     Allows the creation of multiple pods easily | 	      Allows the creation of multiple pods easily
     The original method of replication in Kubernetes.  |	    Has more flexible selectors	             |       Extends ReplicaSets with easy update                                                                                                                                roll-out and roll-back
 
+
+
 ##### Persistent Volumes and Persistent Volume Claims
 A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.
 PVs are resources in the cluster. PVCs are requests for those resources and also act as claim checks to the resource.
+
 
 
 ##### Ingress Controllers
