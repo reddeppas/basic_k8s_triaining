@@ -161,13 +161,28 @@ In a real world cloud environment, this component lets you wire-up your cluster 
     
  In declarative approach you let know the kubernetes desire state for your servers to be in and Kubernetes figures out a way to implement that.
     
- 
+
+### Writing configurations
  Every valid Kubernetes configuration file has four required fields. They are as follows:
 
-apiVersion: Which version of the Kubernetes API you're using to create this object. This value may change depending on the kind of object you are creating. For creating a Pod the required version is v1.
+##### apiVersion: 
+Which version of the Kubernetes API you're using to create this object. This value may change depending on the kind of object you are creating. For creating a Pod the required version is v1.
 
-kind: What kind of object you want to create. Objects in Kubernetes can be of many kinds. As you go through the article, you'll learn about a lot of them, but for now, just understand that you're creating a Pod object.
+##### kind: 
+What kind of object you want to create. Objects in Kubernetes can be of many kinds. As you go through the article, you'll learn about a lot of them, but for now, just understand that you're creating a Pod object.
 
-metadata: Data that helps uniquely identify the object. Under this field you can have information like name, labels, annotation etc. The metadata.name string will show up on the terminal and will be used in kubectl commands. The key value pair under the metadata.labels field doesn't have to be components: web. You can give it any label like app: hello-kube. This value will be used as the selector when creating the LoadBalancer service very soon.
+##### metadata: 
+Data that helps uniquely identify the object. Under this field you can have information like name, labels, annotation etc. The metadata.name string will show up on the terminal and will be used in kubectl commands. The key value pair under the metadata.labels field doesn't have to be components: web. You can give it any label like app: hello-kube. This value will be used as the selector when creating the LoadBalancer service very soon.
 
-spec: contains the state you desire for the object. The spec.containers sub-field contains information about the containers that will run inside this Pod. The spec.containers.name value is what the container runtime inside the node will assign to the newly created container. The spec.containers.image is the container image to be used for creating this container. And the spec.containers.ports field holds configuration regarding various ports configuration. containerPort: 80 indicates that you want to expose port 80 from the container.
+##### spec: 
+contains the state you desire for the object. The spec.containers sub-field contains information about the containers that will run inside this Pod. The spec.containers.name value is what the container runtime inside the node will assign to the newly created container. The spec.containers.image is the container image to be used for creating this container. And the spec.containers.ports field holds configuration regarding various ports configuration. containerPort: 80 indicates that you want to expose port 80 from the container.
+
+    
+    $kubectl apply -f <configuration file>
+    
+    $kubectl apply -f k8s/pod.yaml
+    
+    
+    $kubectl get pod
+ 
+
