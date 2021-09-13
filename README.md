@@ -41,9 +41,9 @@ Now , let us build the docker image:
      $docker build -t node-web-app .
 We can run the Docker container by:
 
-$ docker run --name hw_container -p 8080:8080 node-web-app
+     $ docker run --name hw_container -p 8080:8080 node-web-app
     
-Running on http://0.0.0.0:8080
+      Running on http://0.0.0.0:8080
 
 Let us remove the container
 
