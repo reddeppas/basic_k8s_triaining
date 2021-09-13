@@ -200,3 +200,20 @@ A Deployment is like an extension to the already nice ReplicaSet API. Deployment
     REPLICATIONCONTROLLER                          |	        REPLICASET	                         |                    DEPLOYMENT
      Allows the creation of multiple pods easily	   |     Allows the creation of multiple pods easily | 	      Allows the creation of multiple pods easily
     The original method of replication in Kubernetes.  |	    Has more flexible selectors	             |       Extends ReplicaSets with easy update                                                                                                                                roll-out and roll-back
+
+##### Persistent Volumes and Persistent Volume Claims
+A PersistentVolume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes.
+PVs are resources in the cluster. PVCs are requests for those resources and also act as claim checks to the resource.
+
+
+##### Ingress Controllers
+ ClusterIP to expose an application within the cluster 
+ LoadBalancer to expose an application outside the cluster.
+ Nodeport: NodePort opens a specific port on all the nodes in your cluster, and handles any traffic that comes through that open port.
+
+
+Ingress is actually not a type of service. Instead, it sits in front of multiple services and acts as a router of sorts.
+
+An IngressController is required to work with Ingress resources in your cluster.
+
+![image](https://user-images.githubusercontent.com/20655128/133029698-17824958-c1b2-4653-9275-c9b2a98e05b9.png)
