@@ -186,6 +186,7 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
       kubectl delete pod hello-world
   
   To delete service
+  
       kubectl delete service hello-world
     
 ### Declartive approach vs Impertive approach
@@ -215,8 +216,11 @@ contains the state you desire for the object. The spec.containers sub-field cont
     
     kubectl apply -f k8s/pod.yaml
     
+    kubectl apply -f k8s/service.yaml
     
     kubectl get pod
+    
+    kubectl get service
  
     
 
