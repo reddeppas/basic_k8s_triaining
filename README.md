@@ -148,11 +148,11 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
   
   Set Kube context 
   
-     kubectl config use-context <cluster-name>
+     kubectl config use-context k8sdemo
      
   Deleting a cluster
 
-      kind delete cluster --name k8s_demo
+      kind delete cluster --name k8sdemo
     
     
 
