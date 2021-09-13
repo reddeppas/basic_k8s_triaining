@@ -251,24 +251,6 @@ Use a ConfigMap for setting configuration data separately from application code.
 ##### Secrets:
 
 A Secret contains a small amount of sensitive data such as a password, a token, or a key.
- 
-                kubectl apply -f k8s/secret.yaml
-                
-                containers:
-                - name: hello-world
-                  image: reddeppas/node-web-app:1.0
-                  ports:
-                  - containerPort: 80
-                  volumeMounts:
-                  - name: helloworld
-                    mountPath: "/etc/helloworld"
-                    readOnly: true
-                volumes:
-                - name: helloworld
-                    secret:
-                      secretName: hello-world-secret
-                 
-
 
 
 ###### Types of secrets
@@ -289,6 +271,23 @@ kubernetes.io/tls:	data for a TLS client or server
 
 bootstrap.kubernetes.io/token:	bootstrap token data
 
+
+                kubectl apply -f k8s/secret.yaml
+                
+                containers:
+                - name: hello-world
+                  image: reddeppas/node-web-app:1.0
+                  ports:
+                  - containerPort: 80
+                  volumeMounts:
+                  - name: helloworld
+                    mountPath: "/etc/helloworld"
+                    readOnly: true
+                volumes:
+                - name: helloworld
+                    secret:
+                      secretName: hello-world-secret
+                 
 
 ##### ReplicationController: 
 as the name suggests allows you to easily create multiple replicas very easily. Once the desired number of replicas are created, the controller will make sure that the state stays that way.
