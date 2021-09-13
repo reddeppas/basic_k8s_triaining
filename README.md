@@ -12,58 +12,59 @@
 
 ### excercise 1:
 
-    Install Docker:
+Install Docker:
      https://docs.docker.com/get-docker/ 
     
     $ docker --version
       Docker version 20.10.6, build 370c289
     
-    Install npm
+Install npm
       https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
     
     $ node -v
       v14.14.0
     $ npm -v
       6.14.8
-    Install express js
+ Install express js
     $ npm install express --save
 
-    Start node server
+ Start node server
+ 
     $ node helloworld/server.js 
     Running on http://0.0.0.0:8080
 
-    Open http://localhost:8080, and you'll see your hello world response
+ Open http://localhost:8080, and you'll see your hello world response
   
-    Now , let us build the docker image:
+ Now , let us build the docker image:
     
-    $docker build -t node-web-app .
+     $docker build -t node-web-app .
 
-    We can run the Docker container by:
+ We can run the Docker container by:
 
     $ docker run --name hw_container -p 8080:8080 node-web-app
     
-    Running on http://0.0.0.0:8080
+Running on http://0.0.0.0:8080
 
-    Let us remove the container
+Let us remove the container
 
     $ docker rm -f hw_container
 
     
 ### What is Kubernetes? 
-    Kubernetes also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
+Kubernetes also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications.
 
 ### Application Deployment
-    Traditional Deployment:
+Traditional Deployment:
 
-      physical server dedicated to a single application and its libraries. Due to this resources are underutilzed and its expensive.
+physical server dedicated to a single application and its libraries. Due to this resources are underutilzed and its expensive.
       
-    Virtualized deployment:
+Virtualized deployment:
 
-      Virtualizations allows us to deploy multiple applications on single physical server by Virtualization. There will be multiple vms running along with dedicated operating system per vm and virtuazaltion hardware. We were able to utilize resources to an extent because of virtulzation.
+Virtualizations allows us to deploy multiple applications on single physical server by Virtualization. There will be multiple vms running along with dedicated operating system per vm and virtuazaltion hardware. We were able to utilize resources to an extent because of virtulzation.
 
-    Container Deployment:
+Container Deployment:
     
-      Containers are similiar to vms, but they are isolated and share the same operating system among the applications. Therefore containers are lightweight.
+ Containers are similiar to vms, but they are isolated and share the same operating system among the applications. Therefore containers are lightweight.
 
       
      
@@ -109,10 +110,11 @@ In a real world cloud environment, this component lets you wire-up your cluster 
 
 ### Kubernetes Objects:
   Pods: A pod usually encapsulates one or more containers that are closely related sharing a life cycle and consumable resources.
-  Deployment: 
   Services: a Service is an abstraction which defines a logical set of Pods and a policy by which to access them
   
-   ### Create kubernetes cluster:
+  ### Create kubernetes cluster:
+ 
+kubectl, one of the most important tools to interact with your Kubernetes cluster. Follow this guide to install it:         https://kubernetes.io/docs/tasks/tools/install-kubectl/.
     
  We will use kind to create kubernetes cluster. To install kind follow the document https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
