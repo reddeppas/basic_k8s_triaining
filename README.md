@@ -77,7 +77,7 @@ Every cluster has at least one worker node.
 
 ![image](https://user-images.githubusercontent.com/20655128/132990006-007c8f4c-e8a2-4c80-9d12-ba88f8f1791a.png)
 
-Roles :
+##### Roles :
 ###### Control plane : 
 Makes most of the necessary decisions and acts as sort of the brains of the entire cluster. This can be a single server or a group of server in larger projects
 
