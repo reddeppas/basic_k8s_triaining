@@ -78,8 +78,11 @@ Every cluster has at least one worker node.
 ![image](https://user-images.githubusercontent.com/20655128/132990006-007c8f4c-e8a2-4c80-9d12-ba88f8f1791a.png)
 
 Roles :
-  Control plane : Makes most of the necessary decisions and acts as sort of the brains of the entire cluster. This can be a single server or a group of server in larger projects
-  node: Responsible for running workloads. These servers are usually micro managed by the control plane and carries out various tasks following supplied instructions.
+###### Control plane : 
+Makes most of the necessary decisions and acts as sort of the brains of the entire cluster. This can be a single server or a group of server in larger projects
+
+###### node: 
+Responsible for running workloads. These servers are usually micro managed by the control plane and carries out various tasks following supplied instructions.
   
 ### control plane components
 
@@ -128,6 +131,9 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
 
     $kind delete cluster --name k8s_demo
     
+ 
+ ![image](https://user-images.githubusercontent.com/20655128/133031485-ede88815-f176-42d9-a023-aeb12300f7b0.png)
+
  ### Helloworld in kubernetes
  Once the kind cluster up and running 
     
@@ -196,6 +202,8 @@ contains the state you desire for the object. The spec.containers sub-field cont
 A ConfigMap is  used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
 
 Use a ConfigMap for setting configuration data separately from application code. The data stored in a ConfigMap cannot exceed 1 MiB
+
+
 
 
 ##### Secrets:
