@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-kube-pod
+  name: hello-world-pod
   labels:
     component: web
 spec:
   containers:
-    - name: hello-kube
+    - name: hello-world
       image: node-web-app
       ports:
         - containerPort: 80
