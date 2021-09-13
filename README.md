@@ -131,8 +131,12 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
 
     $kind delete cluster --name k8s_demo
     
+    
+ ###### API Request Flow 
+ 
  
  ![image](https://user-images.githubusercontent.com/20655128/133031485-ede88815-f176-42d9-a023-aeb12300f7b0.png)
+
 
  ### Helloworld in kubernetes
  Once the kind cluster up and running 
