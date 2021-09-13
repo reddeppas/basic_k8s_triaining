@@ -16,23 +16,24 @@ Docker,containerd, rkt, cri-o, lxc and runc
 https://docs.docker.com/get-docker/ 
     
     $ docker --version
-      Docker version 20.10.6, build 370c289
+    
     
 ##### Install npm
 https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
     
     $ node -v
-      v14.14.0
+      
     $ npm -v
-      6.14.8
+      
       
 ##### Install express js
+
     $ npm install express --save
 
 ##### Start node server
  
     $ node helloworld/server.js 
-    Running on http://0.0.0.0:8080
+    
 
 Open http://localhost:8080, and you'll see your hello world response
 
@@ -43,8 +44,7 @@ We can run the Docker container by:
 
      $ docker run --name hw_container -p 8080:8080 node-web-app
     
-      Running on http://0.0.0.0:8080
-
+      
 Let us remove the container
 
     $ docker rm -f hw_container
