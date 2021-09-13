@@ -187,4 +187,16 @@ contains the state you desire for the object. The spec.containers sub-field cont
     
     $kubectl get pod
  
+    
+##### ReplicationController: 
+as the name suggests allows you to easily create multiple replicas very easily. Once the desired number of replicas are created, the controller will make sure that the state stays that way.
 
+##### ReplicaSet:
+ReplicaSet can provide you with a wider range of selection option, both ReplicationController and ReplicaSet are more or less the same thing.
+
+##### Deployment:
+A Deployment is like an extension to the already nice ReplicaSet API. Deployment not only allows you to create replicas in no time, but also allows you to release updates or go back to a previous function with just one or two kubectl commands.
+
+    REPLICATIONCONTROLLER                          |	        REPLICASET	                       |                    DEPLOYMENT
+Allows the creation of multiple pods easily	       Allows the creation of multiple pods easily	      Allows the creation of multiple pods easily
+The original method of replication in Kubernetes	Has more flexible selectors	                      Extends ReplicaSets with easy update roll-out and roll-back
