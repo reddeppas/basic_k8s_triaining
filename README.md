@@ -41,6 +41,12 @@ Now , let us build the docker image:
     
      docker build -t reddeppas/node-web-app:latest .
      
+Push image to docker hub or private registry:
+
+     docker login
+     
+     docker push reddeppas/node-web-app:latest
+     
 We can run the Docker container by:
 
       docker run --name helloworld_container -p 8080:8080 node-web-app
