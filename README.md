@@ -231,11 +231,45 @@ A ConfigMap is  used to store non-confidential data in key-value pairs. Pods can
 Use a ConfigMap for setting configuration data separately from application code. The data stored in a ConfigMap cannot exceed 1 MiB
 
 
-
+         kubectl apply -f k8s/configmap.yaml
+         
+         
+            env:
+             Define the environment variable in deployment.yaml
+            - name: app_build
+              valueFrom:
+                configMapKeyRef:
+                  name: hello-world-configmap
+                  key: app_build
+            - name: app_name
+              valueFrom:
+                configMapKeyRef:
+                  name: hello-world-configmap
+                  key: app_name
+            
 
 ##### Secrets:
 
 A Secret contains a small amount of sensitive data such as a password, a token, or a key.
+ 
+                kubectl apply -f k8s/secret.yaml
+                
+                containers:
+                - name: hello-world
+                  image: reddeppas/node-web-app:1.0
+                  ports:
+                  - containerPort: 80
+                  volumeMounts:
+                  - name: helloworld
+                    mountPath: "/etc/helloworld"
+                    readOnly: true
+                volumes:
+                - name: helloworld
+                    secret:
+                      secretName: hello-world-secret
+                 
+
+
 
 ###### Types of secrets
 
