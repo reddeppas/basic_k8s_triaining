@@ -140,7 +140,7 @@ kubectl, one of the most important tools to interact with your Kubernetes cluste
 
  Create a cluster
  
-        kind create cluster --name k8s_demo
+        kind create cluster --name k8sdemo
 
   List clusters 
   
